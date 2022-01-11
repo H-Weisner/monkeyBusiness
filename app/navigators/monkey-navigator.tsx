@@ -37,10 +37,10 @@ const AppStack = () => {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName="Monkey"
+      initialRouteName="Troop"
     >
-      <Stack.Screen name="Monkey" component={MonkeyScreen} />
       <Stack.Screen name="Troop" component={TroopScreen} />
+      <Stack.Screen name="Monkey" component={MonkeyScreen} />
     </Stack.Navigator>
   );
 };
