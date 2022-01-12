@@ -1,3 +1,1 @@
-
-const monkeyApi = require("http://dev-cloud.cc/api/");
-export default monkeyApi;
+export const axios = require('axios');

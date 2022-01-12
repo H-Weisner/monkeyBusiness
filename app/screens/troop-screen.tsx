@@ -11,7 +11,7 @@ import {
 import { Monkey } from "../models/monkey";
 import { StackScreenProps } from "@react-navigation/stack";
 import { observer } from "mobx-react-lite";
-import monkeyApi from "../services/api/monkey-api";
+import {axios} from "../services/api/monkey-api";
 import { Screen, AutoImage as Image } from "../components";
 import { color, spacing } from "../theme";
 import { NavigatorParamList } from "../navigators";
@@ -48,8 +48,8 @@ export const TroopScreen: FC<StackScreenProps<NavigatorParamList, "Troop">> =
     useEffect(() => {
       async function loadMonkeys(): Promise<void> {
         try {
-          const response = await monkeyApi.get("/monkeys");
-          setMonkeys(response.data);
+          const response = await axios.get("http://dev-cloud.cc/api/");
+          setMonkeys(response.data.monkeys);
         } catch (error) {
           Alert.alert(
             "There was an error while listing monkeys. Please, try to reload the screen",
