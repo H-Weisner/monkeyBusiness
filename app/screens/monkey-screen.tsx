@@ -2,8 +2,8 @@ import React, { FC } from "react";
 //import React, { useEffect, FC } from "react"
 // import { FlatList, TextStyle, Text, View, ViewStyle } from "react-native"
 import { View, ViewStyle, ImageStyle, Text } from "react-native";
-import { Screen, AutoImage as Image } from "../components";
-import { TextStyles } from ".";
+import { AutoImage as Image, Wallpaper } from "../components";
+import { TextStyles } from "./troop-screen";
 import { StackScreenProps } from "@react-navigation/stack";
 import { observer } from "mobx-react-lite";
 //import { Screen } from "../components"
@@ -17,9 +17,9 @@ const FULL: ViewStyle = {
   flex: 1,
   alignItems: "flex-end",
 };
-const CONTAINER: ViewStyle ={
+const CONTAINER: ViewStyle = {
   marginTop: 100,
-}
+};
 
 const IMAGE: ImageStyle = {
   borderTopLeftRadius: 35,
@@ -39,11 +39,11 @@ const INFO_BOX: ViewStyle = {
   marginTop: 15,
   width: 225,
   backgroundColor: color.background_secondary,
-  paddingVertical:25,
-  paddingHorizontal:15,
+  paddingVertical: 25,
+  paddingHorizontal: 15,
   borderTopLeftRadius: 15,
-  borderBottomLeftRadius:15
-}
+  borderBottomLeftRadius: 15,
+};
 
 /**
 const CONTAINER: ViewStyle = {
@@ -67,15 +67,16 @@ export const MonkeyScreen: FC<StackScreenProps<NavigatorParamList, "Monkey">> =
     const monkey = route.params;
     return (
       <View testID="DepartmentsScreen" style={FULL}>
+        <Wallpaper backgroundImage={require("./backgroundMonkey.png")} />
         <View style={CONTAINER}>
           <Image source={{ uri: monkey.img }} style={IMAGE} />
           <Text style={IMAGE_TEXT}>{monkey.name}</Text>
-        </View>          
-          <View style={INFO_BOX}>
-            <Text style = {TextStyles.dark}>Age:{monkey.age}</Text>
-          </View>
-          <View style={INFO_BOX}>
-            <Text style = {TextStyles.banana}>Banana hoard:{monkey.bananas}</Text>
+        </View>
+        <View style={INFO_BOX}>
+          <Text style={TextStyles.dark}>Age:{monkey.age}</Text>
+        </View>
+        <View style={INFO_BOX}>
+          <Text style={TextStyles.banana}>Banana hoard:{monkey.bananas}</Text>
         </View>
       </View>
     );

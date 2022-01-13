@@ -1,3 +1,3 @@
 export * from "./auto-image/auto-image"
 export * from "./button/button"
-export * from "./screen/screen"
+export * from "./wallpaper/wallpaper"
