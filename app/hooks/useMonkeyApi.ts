@@ -1,11 +1,11 @@
-import { MonkeyType } from "../../models/monkey";
+import { MonkeyType } from "../models/monkey";
 import { useEffect, useState } from "react";
 import { Alert } from "react-native";
 const axios = require("axios");
 /**
 * Where we round up those monkeys
 */
-export const monkeyApi = () => {
+export const useMonkeyApi = () => {
   const [monkeys, setMonkeys] = useState<MonkeyType[]>([]);
   useEffect(() => {
     async function loadMonkeys(): Promise<void> {

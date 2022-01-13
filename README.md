@@ -27,13 +27,12 @@ App
 │   └── index.ts
 ├── hooks
 │   ├── index.ts
-│   └── useBackButtonHandler.ts------------[1#] allows use of back button on android
+│   ├── useBackButtonHandler.ts------------[1#] allows use of back button on android
+│   └── useMonkeyApi.ts
 ├── screens
 │   ├── monkey-screen.tsx
 │   ├── troop-screen.tsx
 │   ├── index.ts
-├── services/api
-│   └── monkey-api.ts
 ├── theme
 │   ├── color.ts
 │   ├── index.ts

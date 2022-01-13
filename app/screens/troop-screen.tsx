@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { MonkeyType } from "../models/monkey";
 import { StackScreenProps } from "@react-navigation/stack";
-import { monkeyApi } from "../services/api/monkey-api";
+import { useMonkeyApi } from "../hooks/useMonkeyApi";
 import { Button, Wallpaper } from "../components";
 import { color, spacing } from "../theme";
 import { NavigatorParamList } from "../navigators";
@@ -17,7 +17,7 @@ import { NavigatorParamList } from "../navigators";
 export const TroopScreen: FC<StackScreenProps<NavigatorParamList, "Troop">>
 = ({navigation}) => {
   //get the monkeys
-  const monkeys = monkeyApi();
+  const monkeys = useMonkeyApi();
   //navigate to the monkey's profile screen
   const goMonkey = (monkey: MonkeyType) =>
     navigation.navigate("Monkey", monkey);
