@@ -29,13 +29,13 @@ export const MonkeyScreen: FC<StackScreenProps<NavigatorParamList, "Monkey">>
         <Text style={IMAGE_TEXT}>{monkey.name}</Text>
       </View>
       <View style={INFO_BOX}>
-        <Text style={TextStyles.dark}>
-          🐒 {monkey.age} {years}
+        <Text style={TextStyles.banana}>
+          🍌 {monkey.bananas} {bananas}
         </Text>
       </View>
       <View style={INFO_BOX}>
-        <Text style={TextStyles.banana}>
-          🍌 {monkey.bananas} {bananas}
+        <Text style={TextStyles.dark}>
+          🐒 {monkey.age} {years}
         </Text>
       </View>
     </View>

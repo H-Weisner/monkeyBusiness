@@ -110,8 +110,4 @@ export const TextStyles = StyleSheet.create({
     ...TEXT_ROOT,
     color: color.primary,
   },
-  brown: {
-    ...TEXT_ROOT,
-    color: color.secondary,
-  },
 });

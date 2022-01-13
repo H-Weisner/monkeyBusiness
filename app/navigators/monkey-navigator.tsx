@@ -45,7 +45,7 @@ const AppStack = () => {
 };
 
 interface NavigationProps
-  extends Partial<React.ComponentProps<typeof NavigationContainer>> {}
+  extends React.ComponentProps<typeof NavigationContainer> {}
 
 //default navigator by expo
 export const AppNavigator = (props: NavigationProps) => {
