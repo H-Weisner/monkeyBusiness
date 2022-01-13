@@ -16,7 +16,8 @@ App
 ├── components
 │   ├── auto-image------------[1] makes images easy to deal with
 │   ├── screen------------[1] simplifies scrolling behaviour
-│   ├── index.ts
+│   ├── button
+│   └── index.ts
 ├── models
 │   ├── monkey
 │   │   ├── monkey.test.ts
@@ -30,8 +31,7 @@ App
 │   └── index.ts
 ├── hooks
 │   ├── index.ts
-│   ├── useBackButtonHandler.ts------------[1#] allows use of back button on android
-│   └── useNavigationPersistence.ts------------[1#] allows user to return to the same screen
+│   └── useBackButtonHandler.ts------------[1#] allows use of back button on android
 ├── screens
 │   ├── error
 │   │   ├── error-boundary.tsx------------[1] helps with errors
@@ -44,7 +44,7 @@ App
 ├── theme------------[1] layout pinched from ignite
 │   ├── fonts
 │   │   ├── index.ts
-│   │   ├── manrope.ttf------------the closest free font I could find to CarbonCode's, I swear I didn't choose it for the name
+│   │   ├── manrope.ttf------------the closest free font I could find to CarbonCode's, I didn't choose it for the name
 │   │   └── selection.json
 │   ├── color.ts
 │   ├── index.ts
@@ -60,7 +60,6 @@ Each component has a directory containing the `.tsx` file, and optionally `.pres
 
 **models**
 Where the app's models live. 
-Each model has a directory which contains the `mobx-state-tree` model file, test file, and any other supporting files like actions, types, etc.
 
 **navigators**
 Where the `react-navigation` navigators live.

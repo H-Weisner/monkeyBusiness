@@ -20,30 +20,30 @@ export const color = {
   /**
    * The screen background.
    */
-  background: palette.white,
+  white: palette.white,
   /**
    * The main tinting colour.
    */
-  primary: palette.monkeyBrown,
+  background_primary: palette.darkGreen,
   /**
    * The contrasting tinting colour.
    */
-  secondary: palette.bananaYellow,
+  background_secondary: palette.grey,
   /**
    * A colour used for borders and lines.
    */
-  line: palette.bananaYellow,
+  banana: palette.bananaYellow,
   /**
    * The default colour of text in many components.
    */
-  text: palette.jungleGreen,
+  age: palette.lightGreen,
   /**
    * Secondary information.
    */
-  dim: palette.grey,
+  monkey: palette.offWhite,
   /**
    * Error messages and icons.
    */
-  error: palette.monkeyBrown,
+  error: palette.red,
 
 }

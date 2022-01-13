@@ -1,9 +1,9 @@
 export const palette = {
   white: "#ffffff",
-  offWhite: "#e0e0e0",
-  grey: "#9b9b9b",
-  darkGrey: "#1B1C20",
-  monkeyBrown: "#59200",
-  jungleGreen: "#E60003",
-  bananaYellow: "#939AA4",
+  offWhite: "#D5E0A6",
+  grey: "#A3A3A3",
+  darkGreen: "#004F39",
+  lightGreen: "#60B438",
+  bananaYellow: "#FFE922",
+  red: "#e60003"
 }

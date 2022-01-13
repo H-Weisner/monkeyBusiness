@@ -3,14 +3,16 @@ import {
   FlatList,
   View,
   ViewStyle,
-  Button,
+  Text,
   Alert,
+  TextStyle,
+  StyleSheet,
 } from "react-native";
 import { MonkeyType } from "../models/monkey";
 import { StackScreenProps } from "@react-navigation/stack";
 import { observer } from "mobx-react-lite";
 import { axios } from "../services/api/monkey-api";
-import { Screen } from "../components";
+import { Screen, Button } from "../components";
 import { color, spacing } from "../theme";
 import { NavigatorParamList } from "../navigators";
 const FULL: ViewStyle = {
@@ -23,7 +25,9 @@ const CONTAINER: ViewStyle = {
 const LIST_CONTAINER: ViewStyle = {
   alignItems: "center",
   flexDirection: "row",
-  padding: 10,
+  justifyContent: "center",
+  height: 75,
+  marginVertical: 15,
 };
 //**
 //const IMAGE: ImageStyle = {
@@ -31,11 +35,44 @@ const LIST_CONTAINER: ViewStyle = {
 //  height: 65,
 //  width: 65,
 //}
+const BUTTON: ViewStyle = {
+  ...LIST_CONTAINER,
+  borderRadius: 25,
+  backgroundColor: color.background_primary,
+  width: "85%",
+};
 
-
+const BUTTONINNERROOT: ViewStyle = {};
+const LHS_BUTTON: ViewStyle = {
+  ...BUTTONINNERROOT,
+  flex: 1,
+  padding: 15,
+};
+const RHS_BUTTON: ViewStyle = {
+  ...BUTTONINNERROOT,
+  flex: 2,
+  flexDirection: "column",
+  alignItems: "flex-start",
+};
 const FLAT_LIST: ViewStyle = {
   paddingHorizontal: spacing[4],
+  paddingVertical: 100,
 };
+
+export const TextStyles = StyleSheet.create({
+  light: {
+    color: color.age,
+  },
+  banana: {
+    color: color.banana,
+  },
+  ultraLight: {
+    color: color.monkey,
+  },
+  dark: {
+    color: color.background_primary,
+  },
+});
 
 export const TroopScreen: FC<StackScreenProps<NavigatorParamList, "Troop">> =
   observer(({ navigation }) => {
@@ -47,28 +84,36 @@ export const TroopScreen: FC<StackScreenProps<NavigatorParamList, "Troop">> =
           setMonkeys(response.data.monkeys);
         } catch (error) {
           Alert.alert(
-            "There was an error while listing monkeys. Please, try to reload the screen",
+            "There was an error while listing monkeys. Please, try to reload the screen"
           );
         }
       }
       loadMonkeys();
     }, []);
-    const goMonkey = (monkey:MonkeyType) => navigation.navigate("Monkey", monkey)
+    const goMonkey = (monkey: MonkeyType) =>
+      navigation.navigate("Monkey", monkey);
 
     return (
       <View testID="DepartmentsScreen" style={FULL}>
-        <Screen
-          style={CONTAINER}
-          preset="fixed"
-          backgroundColor={color.background}
-        >
+        <Screen style={CONTAINER} preset="fixed" backgroundColor={color.white}>
           <FlatList
             contentContainerStyle={FLAT_LIST}
             data={[...monkeys]}
             keyExtractor={(item) => String(item.id)}
             renderItem={({ item }) => (
               <View style={LIST_CONTAINER}>
-                <Button title={item.name} onPress={()=>goMonkey(item)}>
+                <Button onPress={() => goMonkey(item)} style={BUTTON}>
+                  <View style={LHS_BUTTON}>
+                    <Text style={TextStyles.ultraLight}>{item.name}</Text>
+                  </View>
+                  <View style={RHS_BUTTON}>
+                    <Text style={TextStyles.banana}>
+                      {item.bananas} bananas
+                    </Text>
+                    <Text style={TextStyles.light}>
+                      {item.age} years old
+                    </Text>
+                  </View>
                 </Button>
               </View>
             )}

@@ -3,7 +3,6 @@ import { SafeAreaProvider, initialWindowMetrics } from "react-native-safe-area-c
 import { initFonts } from "./theme/fonts" // expo
 import { AppNavigator, canExit } from "./navigators"
 import { useBackButtonHandler } from "./hooks"
-import { ErrorBoundary } from "./screens/error/error-boundary"
 export default function App() {
   useBackButtonHandler(canExit)
 
