@@ -1,18 +1,16 @@
 import React, { useEffect, useState, FC } from "react";
 import {
   FlatList,
-  TextStyle,
   View,
-  Text,
   ViewStyle,
   Button,
   Alert,
 } from "react-native";
-import { Monkey } from "../models/monkey";
+import { MonkeyType } from "../models/monkey";
 import { StackScreenProps } from "@react-navigation/stack";
 import { observer } from "mobx-react-lite";
-import {axios} from "../services/api/monkey-api";
-import { Screen, AutoImage as Image } from "../components";
+import { axios } from "../services/api/monkey-api";
+import { Screen } from "../components";
 import { color, spacing } from "../theme";
 import { NavigatorParamList } from "../navigators";
 const FULL: ViewStyle = {
@@ -34,17 +32,14 @@ const LIST_CONTAINER: ViewStyle = {
 //  width: 65,
 //}
 
-const LIST_TEXT: TextStyle = {
-  marginLeft: 10,
-};
+
 const FLAT_LIST: ViewStyle = {
   paddingHorizontal: spacing[4],
 };
 
 export const TroopScreen: FC<StackScreenProps<NavigatorParamList, "Troop">> =
   observer(({ navigation }) => {
-    const [monkeys, setMonkeys] = useState<Monkey[]>([]);
-
+    const [monkeys, setMonkeys] = useState<MonkeyType[]>([]);
     useEffect(() => {
       async function loadMonkeys(): Promise<void> {
         try {
@@ -58,7 +53,7 @@ export const TroopScreen: FC<StackScreenProps<NavigatorParamList, "Troop">> =
       }
       loadMonkeys();
     }, []);
-    const goMonkey = () => navigation.navigate("Monkey")
+    const goMonkey = (monkey:MonkeyType) => navigation.navigate("Monkey", monkey)
 
     return (
       <View testID="DepartmentsScreen" style={FULL}>
@@ -73,11 +68,7 @@ export const TroopScreen: FC<StackScreenProps<NavigatorParamList, "Troop">> =
             keyExtractor={(item) => String(item.id)}
             renderItem={({ item }) => (
               <View style={LIST_CONTAINER}>
-                <Button title={""} onPress={goMonkey}>
-                  <Image source={item.image} />
-                  <Text style={LIST_TEXT}>
-                    {item.name} ({item.bananas})
-                  </Text>
+                <Button title={item.name} onPress={()=>goMonkey(item)}>
                 </Button>
               </View>
             )}

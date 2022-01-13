@@ -18,9 +18,7 @@ export default function App() {
   // otherwise, we're ready to render the app
   return (
         <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-          <ErrorBoundary catchErrors={"always"}>
             <AppNavigator/>
-          </ErrorBoundary>
         </SafeAreaProvider>
   )
 }

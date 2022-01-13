@@ -1,7 +1,7 @@
-export interface Monkey{
+export interface MonkeyType{
     id:number,
     name:string,
     age:number,
     bananas: number,
-    image: string
+    img: string
 }

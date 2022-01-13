@@ -14,6 +14,7 @@ import {
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { MonkeyScreen, TroopScreen } from "../screens";
+import { MonkeyType } from "../models/monkey";
 const navigationRef = createNavigationContainerRef();
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -25,7 +26,7 @@ const navigationRef = createNavigationContainerRef();
 export type NavigatorParamList = {
   Splash: undefined;
   Troop: undefined;
-  Monkey: undefined;
+  Monkey: MonkeyType;
 };
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
