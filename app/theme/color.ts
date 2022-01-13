@@ -21,14 +21,18 @@ export const color = {
    * The screen background.
    */
   white: palette.white,
+   /**
+   * The screen background.
+   */
+  grey: palette.grey,
   /**
    * The main tinting colour.
    */
-  background_primary: palette.darkGreen,
+  primary: palette.darkGreen,
   /**
    * The contrasting tinting colour.
    */
-  background_secondary: palette.grey,
+  secondary: palette.monkeyBrown,
   /**
    * A colour used for borders and lines.
    */

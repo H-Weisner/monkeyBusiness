@@ -17,8 +17,7 @@ import { MonkeyScreen, TroopScreen } from "../screens";
 import { MonkeyType } from "../models/monkey";
 const navigationRef = createNavigationContainerRef();
 /**
- * This type allows TypeScript to know what routes are defined in this navigator
- * as well as what properties (if any) they might take when navigating to them.
+ * Lets TypeScript know what routes are defined & properties they might take
  *
  * I could use MobX-State-Tree or redux rather than pass this MonkeyType.
  */
@@ -28,7 +27,7 @@ export type NavigatorParamList = {
   Monkey: MonkeyType;
 };
 /**
- * Our Stack navigator
+ * The Stack navigator
  */
 const Stack = createNativeStackNavigator<NavigatorParamList>();
 const AppStack = () => {

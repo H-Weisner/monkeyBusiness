@@ -4,9 +4,7 @@ import { viewPresets } from "./button.presets"
 import { ButtonProps } from "./button.props"
 
 /**
- * For your text displaying needs.
- *
- * This component is a HOC over the built-in React Native one.
+ * For my text displaying needs.
  */
 export function Button(props: ButtonProps) {
   // grab the props

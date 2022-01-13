@@ -20,9 +20,7 @@ export function getActiveRouteName(
   return getActiveRouteName(route.state);
 }
   /**
-   * use this to navigate to navigate without the navigation
-   * prop. If you have access to the navigation prop, do not use this.
-   * More info: https://reactnavigation.org/docs/navigating-without-navigation-prop/
+   * for a back button I didn't implement
    */
   export function goBack() {
     if (navigationRef.isReady() && navigationRef.canGoBack()) {
