@@ -20,17 +20,16 @@ const navigationRef = createNavigationContainerRef();
  * This type allows TypeScript to know what routes are defined in this navigator
  * as well as what properties (if any) they might take when navigating to them.
  *
- * If no params are allowed, pass `undefined`.
- * Use MobX-State-Tree to keep application state rather than passing state through navigation params.
+ * I could use MobX-State-Tree or redux rather than pass this MonkeyType.
  */
 export type NavigatorParamList = {
   Splash: undefined;
   Troop: undefined;
   Monkey: MonkeyType;
 };
-
-// Documentation: https://reactnavigation.org/docs/stack-navigator/
-
+/**
+ * Our Stack navigator
+ */
 const Stack = createNativeStackNavigator<NavigatorParamList>();
 const AppStack = () => {
   return (
@@ -49,6 +48,7 @@ const AppStack = () => {
 interface NavigationProps
   extends Partial<React.ComponentProps<typeof NavigationContainer>> {}
 
+//default navigator by expo
 export const AppNavigator = (props: NavigationProps) => {
   const colorScheme = useColorScheme();
   return (

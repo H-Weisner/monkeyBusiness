@@ -3,6 +3,7 @@ import {
   FlatList,
   View,
   ViewStyle,
+  TextStyle,
   Text,
   Alert,
   StyleSheet,
@@ -14,57 +15,6 @@ import { axios } from "../services/api/monkey-api";
 import { Button, Wallpaper } from "../components";
 import { color, spacing } from "../theme";
 import { NavigatorParamList } from "../navigators";
-const FULL: ViewStyle = {
-  flex: 1,
-  justifyContent: "center",
-  alignItems: "center",
-};
-const FLAT_LIST: ViewStyle = {
-  paddingHorizontal: spacing[4],
-  marginTop: 100,
-};
-const LIST_CONTAINER: ViewStyle = {
-  alignItems: "center",
-  flexDirection: "row",
-  justifyContent: "center",
-  height: 75,
-  marginVertical: 15,
-};
-
-const BUTTON: ViewStyle = {
-  ...LIST_CONTAINER,
-  borderRadius: 25,
-  backgroundColor: color.background_primary,
-  width: "85%",
-};
-
-const BUTTONINNERROOT: ViewStyle = {};
-const LHS_BUTTON: ViewStyle = {
-  ...BUTTONINNERROOT,
-  flex: 1,
-  padding: 15,
-};
-const RHS_BUTTON: ViewStyle = {
-  ...BUTTONINNERROOT,
-  flex: 2,
-  flexDirection: "column",
-  alignItems: "flex-start",
-};
-
-export const TextStyles = StyleSheet.create({
-  light: {
-    color: color.age,
-  },
-  banana: {
-    color: color.banana,
-  },
-  ultraLight: {
-    color: color.monkey,
-  },
-  dark: {
-    color: color.background_primary,
-  },
-});
 
 export const TroopScreen: FC<StackScreenProps<NavigatorParamList, "Troop">> =
   observer(({ navigation }) => {
@@ -109,3 +59,62 @@ export const TroopScreen: FC<StackScreenProps<NavigatorParamList, "Troop">> =
       </View>
     );
   });
+  const FULL: ViewStyle = {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  };
+  const FLAT_LIST: ViewStyle = {
+    marginTop: spacing["top"],
+  };
+  const LIST_CONTAINER: ViewStyle = {
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "center",
+    height: 75,
+    marginVertical: spacing["medium"],
+  };
+  
+  const BUTTON: ViewStyle = {
+    ...LIST_CONTAINER,
+    borderRadius: 25,
+    backgroundColor: color.background_primary,
+    width: "85%",
+  };
+  
+  const BUTTONINNERROOT: ViewStyle = {};
+  const LHS_BUTTON: ViewStyle = {
+    ...BUTTONINNERROOT,
+    flex: 1,
+    padding: spacing["medium"],
+    justifyContent:"center"
+  };
+  const RHS_BUTTON: ViewStyle = {
+    ...BUTTONINNERROOT,
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "flex-start",
+  };
+  const TEXT_ROOT: TextStyle ={
+  fontSize:20,
+  
+  }
+  export const TextStyles = StyleSheet.create({
+    light: {
+      ...TEXT_ROOT,
+      color: color.age,
+    },
+    banana: {
+      ...TEXT_ROOT,
+      color: color.banana,
+    },
+    ultraLight: {
+      ...TEXT_ROOT,
+      color: color.monkey,
+    },
+    dark: {
+      ...TEXT_ROOT,
+      color: color.background_primary,
+    },
+  });
+  

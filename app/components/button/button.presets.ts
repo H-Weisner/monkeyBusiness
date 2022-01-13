@@ -26,14 +26,12 @@ export const viewPresets: Record<string, ViewStyle> = {
    * A smaller piece of secondard information.
    */
   primary: { ...BASE_VIEW, backgroundColor: color.background_primary } as ViewStyle,
-
   /**
    * Back button.
    */
   back: {
     ...BASE_VIEW,
-    paddingHorizontal: 0,
-    paddingVertical: 0,
+    padding:spacing["medium"],
     alignItems: "flex-start",
   } as ViewStyle,
 }
